@@ -5,39 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Our Forever Story</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #0b0c2a;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #000;
       color: #f0f8ff;
       text-align: center;
       overflow-x: hidden;
     }
+
     header {
       padding: 60px 20px;
     }
-    h1 {
-      font-size: 3em;
+
+    h1, h2 {
+      font-family: 'Times New Roman', serif;
       color: #74c0fc;
+      text-align: center;
     }
+
     .section {
       padding: 50px 20px;
     }
+
     .gallery img {
-      width: 90%;
-      max-width: 400px;
+      width: 85%;
+      max-width: 350px;
       margin: 15px;
       border-radius: 20px;
       box-shadow: 0 0 15px #74c0fc88;
     }
+
     #counter {
-      font-size: 1.5em;
-      margin-top: 20px;
+      font-size: 1.2em;
+      font-family: monospace;
       color: #a3d8ff;
+      margin-top: 20px;
     }
+
     #proposal {
       margin-top: 50px;
     }
+
     #proposal button {
       font-size: 1.5em;
       background-color: #339af0;
@@ -49,9 +61,11 @@
       box-shadow: 0 0 20px #339af0aa;
       transition: transform 0.3s ease;
     }
+
     #proposal button:hover {
       transform: scale(1.1);
     }
+
     #finalMessage {
       display: none;
       margin-top: 30px;
@@ -59,145 +73,150 @@
       color: #d0ebff;
       animation: popUp 1s ease forwards;
     }
+
     @keyframes popUp {
       from { transform: scale(0.8); opacity: 0; }
       to { transform: scale(1); opacity: 1; }
     }
+
     .confetti {
       position: fixed;
-      width: 15px;
-      height: 15px;
-      background: #74c0fc;
-      animation: confetti-fall 3s linear infinite;
-      opacity: 0.8;
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
+      opacity: 0.7;
+      pointer-events: none;
+      animation: confetti-fall 3s linear forwards;
     }
-    .confetti-square {
-      position: fixed;
-      width: 20px;
-      height: 20px;
-      background: #74c0fc;
-      animation: confetti-fall 3s linear infinite;
-      opacity: 0.8;
-    }
-    .confetti-heart {
-      position: fixed;
-      width: 20px;
-      height: 20px;
-      background: url('heart.png') no-repeat center center;
-      background-size: contain;
-      animation: confetti-fall 3s linear infinite;
-      opacity: 0.8;
-    }
+
     @keyframes confetti-fall {
-      0% { transform: translateY(-10px); }
-      100% { transform: translateY(100vh); }
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(100vh); opacity: 0; }
+    }
+
+    .quote {
+      font-style: italic;
+      margin-bottom: 30px;
+    }
+
+    .ps-love {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.5em;
+      color: #74c0fc;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
 
-  <audio autoplay loop>
-    <source src="AUDIO-2025-02-14-07-18-40-1.m4a" type="audio/mpeg">
-    Seu navegador não suporta o elemento de áudio.
+  <!-- Áudio controlado via JavaScript -->
+  <audio id="bgMusic">
+    <source src="DanielCaesar_BestPart.mp3" type="audio/mpeg">
   </audio>
 
   <header>
     <h1>Our Forever Story</h1>
-    <p>Desde o dia em que nos encontramos, tudo mudou para melhor.</p>
+    <p class="quote">“O amor é formado de uma só alma, habitando em dois corpos.” — Aristóteles</p>
+    <p class="quote">"You're the coffee that I need in the morning. You're my sunshine in the rain when it's pouring." — Best Part, Daniel Caesar & H.E.R.</p>
   </header>
 
   <section class="section">
     <h2>Our Journey</h2>
-    <p>Compartilhamos sorrisos, sonhos e momentos inesquecíveis. Cada segundo ao seu lado é um presente.</p>
+    <p>
+      Quando eu te conheci, jamais imaginei que, de uma amizade tão incrível, nasceria um grande amor — uma paixão intensa e única.<br><br>
+      Gosto de dizer que somos o verdadeiro significado de "enemies to lovers", porque, convenhamos, toda vez que tentávamos conversar, acabava em briga. E, no fim, a gente sempre saía um pouco irritado um com o outro, não é?<br><br>
+      Nunca passou pela minha cabeça que, um dia, você voltaria para a minha vida e mudaria tudo. Mudaria a mim. Foi algo tão inesperado quanto extraordinário — e o mais surpreendente de tudo é que isso aconteceu com a minha melhor amiga.<br><br>
+      Mas aconteceu. E ainda bem que foi com você.<br><br>
+      Sou completamente apaixonado por você e por tudo o que você me faz sentir. É bonito, é novo, é intenso. Com você, eu descobri uma versão de mim que eu nem sabia que existia.<br><br>
+      E se antes eu não acreditava em destino… agora eu acredito. Porque só o destino seria capaz de transformar nossas discussões em declarações, e nossas provocações em amor.<br><br>
+      Você é, sem dúvida, a minha melhor surpresa.
+    </p>
     <div class="gallery">
-      <img src="foto1.jpg" alt="nos juntos" />
-      <img src="foto2.jpg" alt="sorrindo" />
-      <img src="foto3.jpg" alt="momento doce" />
+      <img src="foto1.jpg" alt="foto1" />
+      <img src="foto2.jpg" alt="foto2" />
+      <img src="foto3.jpg" alt="foto3" />
+      <img src="foto4.jpg" alt="foto4" />
+      <img src="foto5.jpg" alt="foto5" />
     </div>
     <div id="counter"></div>
   </section>
 
   <section class="section">
-    <h2>Motivos para Amar Você</h2>
-    <ul>
-      <li>1 - Seu jeito único.</li>
-      <li>2 - Seus olhos castanhos, nossa, como eu amo os seus olhos.</li>
-      <li>3 - O jeito como você reage a cada elogio.</li>
-      <li>4 - A forma como me trata.</li>
-      <li>5 - O carinho que você sempre demonstra.</li>
-      <li>6 - O seu sorriso, que ilumina meu dia.</li>
-      <li>7 - A sua capacidade de me entender mesmo sem palavras.</li>
-      <li>8 - O quanto você é paciente e compreensiva.</li>
-      <li>9 - A forma como você me faz sentir especial.</li>
-      <li>10 - O amor que você oferece, tão puro e verdadeiro.</li>
-    </ul>
+    <h2>Motivos para Te Amar</h2>
+    <ol style="text-align: left; max-width: 600px; margin: 0 auto;">
+      <li>Seu jeito único.</li>
+      <li>Seus olhos castanhos, nossa, como eu amo os seus olhos.</li>
+      <li>O jeito como você reage a cada elogio.</li>
+      <li>A forma como me trata.</li>
+      <li>O carinho que você sempre demonstra.</li>
+      <li>O seu sorriso, que ilumina meu dia.</li>
+      <li>A sua capacidade de me entender mesmo sem palavras.</li>
+      <li>Amo os seus surtos repentinos e a maneira fofa que fica com ciúmes.</li>
+      <li>A forma como você me faz sentir especial.</li>
+      <li>O amor que você oferece, tão puro e verdadeiro.</li>
+      <li>Seu abraço que me acalma.</li>
+      <li>O jeito que você cuida de mim.</li>
+      <li>Como você ri das minhas piadas ruins.</li>
+      <li>A maneira como segura minha mão.</li>
+      <li>Seus pequenos gestos de carinho diários.</li>
+      <li>Seu olhar quando estamos em silêncio.</li>
+      <li>Como você sonha e me inclui nos seus planos.</li>
+      <li>A confiança que me transmite.</li>
+      <li>A sua beleza que me encanta todos os dias.</li>
+      <li>Por ser exatamente quem você é.</li>
+    </ol>
   </section>
 
   <section class="section">
     <h2>Poema</h2>
-    <p>
-      Amar não é possuir, mas escolher todo dia.<br>
-      Em cada suspiro, em cada caminho.<br>
-      Na calmaria e na tempestade,<br>
-      Seu amor mantém meu coração aquecido.
-    </p>
-  </section>
-
-  <section class="section">
-    <h2>Best Part - Daniel Caesar ft. H.E.R</h2>
-    <blockquote>
-      "Você é o café que eu preciso pela manhã<br>
-      Você é o meu raio de sol na chuva quando está chovendo<br>
-      Você vai se entregar a mim? Dê tudo de si..."
-    </blockquote>
-  </section>
-
-  <section class="section">
-    <h2>Cartinha de Amor</h2>
-    <p>
-      Meu amor,<br><br>
-      Cada dia com você é como um sonho do qual nunca quero acordar. Você traz luz ao meu mundo de uma forma que ninguém mais poderia.<br>
-      Prometo caminhar ao seu lado, entre risos e lágrimas, em cada capítulo da nossa história.<br><br>
-      Para sempre seu,<br>
-      Nickolas
+    <p style="max-width: 600px; margin: 0 auto;">
+      Eu não te amo pouco,<br>
+      Eu te amo muito.<br>
+      Eu não te amo calmo,<br>
+      Eu te amo com tempestades.<br>
+      Eu não te amo com dúvida,<br>
+      Eu te amo com toda certeza que há em mim.<br>
+      Eu não te amo por amar,<br>
+      Eu te amo porque encontrei em você o meu lar.<br>
     </p>
   </section>
 
   <section class="section" id="proposal">
     <h2>O Momento Chegou...</h2>
-    <button onclick="makeProposal()">Marry Me</button>
-    <div id="finalMessage">Você me faz o homem mais feliz do mundo!</div>
+    <button onclick="showFinalMessage()">Marry Me</button>
+    <div id="finalMessage">Ufa… é você! Sempre foi você.</div>
+    <p class="ps-love">PS: I love you</p>
   </section>
 
   <script>
-    function updateCounter() {
-      const startDate = new Date('2024-01-20');
-      const today = new Date();
-      const diffTime = today - startDate;
-      const days = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-      document.getElementById("counter").innerText = `Estamos juntos há ${days} dias.`;
-    }
-    updateCounter();
+    function showFinalMessage() {
+      document.getElementById("finalMessage").style.display = "block";
 
-    function makeProposal() {
-      const message = document.getElementById("finalMessage");
-      message.style.display = "block";
+      const music = document.getElementById("bgMusic");
+      music.play();
 
-      // Reproduzir som de confetes
-      const audio = new Audio('confetti-sound.mp3'); // Substitua o link pelo arquivo de som
-      audio.play();
-
-      for (let i = 0; i < 50; i++) {
+      for (let i = 0; i < 30; i++) {
         let confetti = document.createElement("div");
-        confetti.classList.add("confetti");
-        confetti.style.left = Math.random() * 100 + "vw";
-        confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 80%)`;
-        confetti.style.animationDuration = (Math.random() * 3 + 2) + "s";
+        confetti.className = "confetti";
+        confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+        confetti.style.left = `${20 + Math.random() * 60}vw`;
+        confetti.style.top = "-10px";
+        confetti.style.animationDuration = `${2 + Math.random() * 2}s`;
         document.body.appendChild(confetti);
-        setTimeout(() => confetti.remove(), 5000);
+        setTimeout(() => confetti.remove(), 4000);
       }
     }
+
+    const startDate = new Date("2025-01-20T00:00:00");
+    function updateCounter() {
+      const now = new Date();
+      const diff = now - startDate;
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      document.getElementById("counter").textContent = `Estamos juntos há ${days} dias`;
+    }
+
+    updateCounter();
+    setInterval(updateCounter, 60000);
   </script>
 
 </body>
