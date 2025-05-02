@@ -46,6 +46,16 @@
       margin-top: 20px;
     }
 
+    #loveText {
+      margin-top: 20px;
+      font-size: 1.1em;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #d0ebff;
+      line-height: 1.6;
+    }
+
     #proposal {
       margin-top: 50px;
     }
@@ -106,7 +116,6 @@
       margin-top: 20px;
     }
 
-    /* Reprodutor e fone */
     #audioPrompt {
       margin-top: 20px;
       display: flex;
@@ -151,12 +160,10 @@
 </head>
 <body>
 
-  <!-- Áudio controlado via JS -->
   <audio id="bgMusic">
     <source src="DanielCaesar_BestPart.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- Player bonito -->
   <div id="audioPrompt">
     <div class="headphone-icon">🎧</div>
     <p>Para uma experiência mais imersiva, coloque os fones e aperte o play:</p>
@@ -188,6 +195,12 @@
       <img src="foto5.jpg" alt="foto5" />
     </div>
     <div id="counter"></div>
+    <div id="loveText">
+      Amar e ser amado é, enfim, se permitir ser quem realmente é. <br>
+      É tirar a máscara, relaxar os ombros e respirar aliviado por encontrar, no outro, um lugar seguro. <br>
+      Com você, eu posso ser eu — inteiro, imperfeito, verdadeiro. <br>
+      E isso é amor.
+    </div>
   </section>
 
   <section class="section">
@@ -240,10 +253,8 @@
   <script>
     function showFinalMessage() {
       document.getElementById("finalMessage").style.display = "block";
-
       const music = document.getElementById("bgMusic");
       music.play();
-
       for (let i = 0; i < 30; i++) {
         let confetti = document.createElement("div");
         confetti.className = "confetti";
@@ -267,20 +278,16 @@
     updateCounter();
     setInterval(updateCounter, 60000);
 
-    // Botão do player
     document.getElementById("playBtn").addEventListener("click", () => {
       const music = document.getElementById("bgMusic");
       music.volume = 0.5;
       music.play();
     });
 
-    // Tentativa sutil de autoplay
     window.addEventListener('DOMContentLoaded', () => {
       const music = document.getElementById("bgMusic");
       music.volume = 0.5;
-      music.play().catch(() => {
-        // Se bloqueado, usuário pode apertar o botão
-      });
+      music.play().catch(() => {});
     });
   </script>
 
