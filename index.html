@@ -105,14 +105,63 @@
       color: #74c0fc;
       margin-top: 20px;
     }
+
+    /* Reprodutor e fone */
+    #audioPrompt {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .headphone-icon {
+      font-size: 2em;
+      color: #74c0fc;
+      animation: glow 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #74c0fc; }
+      to { text-shadow: 0 0 15px #74c0fc; }
+    }
+
+    #playBtn {
+      font-size: 1em;
+      background-color: #1c7ed6;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #1c7ed688;
+      transition: transform 0.2s ease;
+    }
+
+    #playBtn:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Áudio controlado via JavaScript -->
+  <!-- Áudio controlado via JS -->
   <audio id="bgMusic">
     <source src="DanielCaesar_BestPart.mp3" type="audio/mpeg">
   </audio>
+
+  <!-- Player bonito -->
+  <div id="audioPrompt">
+    <div class="headphone-icon">🎧</div>
+    <p>Para uma experiência mais imersiva, coloque os fones e aperte o play:</p>
+    <button id="playBtn">Ouça enquanto lê 💙</button>
+  </div>
 
   <header>
     <h1>Our Forever Story</h1>
@@ -217,6 +266,22 @@
 
     updateCounter();
     setInterval(updateCounter, 60000);
+
+    // Botão do player
+    document.getElementById("playBtn").addEventListener("click", () => {
+      const music = document.getElementById("bgMusic");
+      music.volume = 0.5;
+      music.play();
+    });
+
+    // Tentativa sutil de autoplay
+    window.addEventListener('DOMContentLoaded', () => {
+      const music = document.getElementById("bgMusic");
+      music.volume = 0.5;
+      music.play().catch(() => {
+        // Se bloqueado, usuário pode apertar o botão
+      });
+    });
   </script>
 
 </body>
